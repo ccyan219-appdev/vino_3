@@ -17,7 +17,7 @@
 
       <% @listings.each do |listing| %>
       <tr>
-        <td><%= listing.wine_id %></td>
+        <td><%= listing.wine.created_at %></td>
         <td><%= listing.location_id %></td>
         <td><%= listing.price %></td>
         <td>
