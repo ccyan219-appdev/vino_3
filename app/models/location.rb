@@ -6,6 +6,10 @@ class Location < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :users,
+             :through => :wines,
+             :source => :users
+
   has_many   :histories,
              :through => :listings,
              :source => :histories

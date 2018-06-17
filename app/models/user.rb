@@ -6,6 +6,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :locations,
+             :through => :wines,
+             :source => :locations
+
   has_many   :wines,
              :through => :histories,
              :source => :wine
