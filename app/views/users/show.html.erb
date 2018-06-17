@@ -20,3 +20,96 @@
     </div>
   </div>
 </div>
+
+<!-- A User has many histories -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Histories
+      </li>
+
+      <% @user.histories.each do |history| %>
+        <li class="list-group-item">
+          <a href="/histories/<%= history.id %>">
+            <%= history.user_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/histories/<%= history.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/histories/<%= history.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_history/<%= history.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many wines -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Wines
+      </li>
+
+      <% @user.wines.each do |wine| %>
+        <li class="list-group-item">
+          <a href="/wines/<%= wine.id %>">
+            <%= wine.created_at %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/wines/<%= wine.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/wines/<%= wine.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_wine/<%= wine.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many locations -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Locations
+      </li>
+
+      <% @user.locations.each do |location| %>
+        <li class="list-group-item">
+          <a href="/locations/<%= location.id %>">
+            <%= location.name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/locations/<%= location.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/locations/<%= location.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_location/<%= location.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
