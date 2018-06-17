@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h3>Location #<%= @location.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Name</dt>
+      <dd><%= @location.name %></dd>
+
+      <dt>Establishment type</dt>
+      <dd><%= @location.establishment_type %></dd>
+
+      <dt>Address</dt>
+      <dd><%= @location.address %></dd>
+
+      <dt>City</dt>
+      <dd><%= @location.city %></dd>
+
+      <dt>Time open</dt>
+      <dd><%= @location.time_open %></dd>
+
+      <dt>Time close</dt>
+      <dd><%= @location.time_close %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/locations" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/locations/<%= @location.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_location/<%= @location.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
