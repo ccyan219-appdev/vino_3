@@ -50,8 +50,6 @@ class HistoriesController < ApplicationController
 
   def update
     @history = History.find(params[:id])
-
-    @history.user_id = params[:user_id]
     @history.listing_id = params[:listing_id]
     @history.comments = params[:comments]
     @history.rating = params[:rating]
