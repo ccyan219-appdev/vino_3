@@ -10,7 +10,7 @@ class HistoriesController < ApplicationController
   end
 
   def index
-    @histories = History.all
+    @histories = History.page(params[:page]).per(10)
 
     render("histories/index.html.erb")
   end
