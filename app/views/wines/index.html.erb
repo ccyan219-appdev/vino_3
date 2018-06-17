@@ -1,0 +1,38 @@
+<div class="page-header">
+  <h1>
+    Wines
+    <a href="/wines/new" class="btn btn-lg btn-success">New Wine</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Variety</th>
+        <th>Sweetness</th>
+        <th>Body</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @wines.each do |wine| %>
+      <tr>
+        <td><%= wine.image %></td>
+        <td><%= wine.name %></td>
+        <td><%= wine.category %></td>
+        <td><%= wine.variety %></td>
+        <td><%= wine.sweetness %></td>
+        <td><%= wine.body %></td>
+        <td>
+          <a href="/wines/<%= wine.id %>" class="btn btn-primary">Show</a>
+          <a href="/wines/<%= wine.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_wine/<%= wine.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

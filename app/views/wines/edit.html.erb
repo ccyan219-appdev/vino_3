@@ -1,0 +1,82 @@
+<!-- Validation failure messages -->
+<% if @wine.errors.any? %>
+  <% @wine.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Wine #<%= @wine.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_wine/<%= @wine.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for image -->
+      <div class="form-group">
+        <label for="image" class="control-label">
+          Image
+        </label>
+
+        <input type="text" id="image" name="image" placeholder="Image" class="form-control" value="<%= @wine.image %>">
+      </div>
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @wine.name %>">
+      </div>
+
+      <!-- Label and input for category -->
+      <div class="form-group">
+        <label for="category" class="control-label">
+          Category
+        </label>
+
+        <input type="text" id="category" name="category" placeholder="Category" class="form-control" value="<%= @wine.category %>">
+      </div>
+
+      <!-- Label and input for variety -->
+      <div class="form-group">
+        <label for="variety" class="control-label">
+          Variety
+        </label>
+
+        <input type="text" id="variety" name="variety" placeholder="Variety" class="form-control" value="<%= @wine.variety %>">
+      </div>
+
+      <!-- Label and input for sweetness -->
+      <div class="form-group">
+        <label for="sweetness" class="control-label">
+          Sweetness
+        </label>
+
+        <input type="text" id="sweetness" name="sweetness" placeholder="Sweetness" class="form-control" value="<%= @wine.sweetness %>">
+      </div>
+
+      <!-- Label and input for body -->
+      <div class="form-group">
+        <label for="body" class="control-label">
+          Body
+        </label>
+
+        <input type="text" id="body" name="body" placeholder="Body" class="form-control" value="<%= @wine.body %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Wine
+      </button>
+      or
+      <a href="/wines/<%= @wine.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
