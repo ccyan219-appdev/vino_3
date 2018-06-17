@@ -6,6 +6,7 @@ class ListingsController < ApplicationController
   end
 
   def show
+    @history = History.new
     @listing = Listing.find(params[:id])
 
     render("listings/show.html.erb")

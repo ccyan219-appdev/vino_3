@@ -66,6 +66,38 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_listing" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for wine_id -->
+      <input type="hidden" name="wine_id" value="<%= @wine.id %>">
+
+      <!-- Label and input for location_id -->
+      <div class="form-group">
+        <label for="location_id" class="control-label">
+          Location
+        </label>
+
+        <%= select_tag(:location_id, options_from_collection_for_select(Location.all, :id, :name), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for price -->
+      <div class="form-group">
+        <label for="price" class="control-label">
+          Price
+        </label>
+
+        <input type="text" id="price" name="price" placeholder="Price" class="form-control" value="">
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Listing
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

@@ -57,6 +57,49 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_history" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user_id -->
+      <input type="hidden" name="user_id" value="<%= current_user.id %>">
+
+      <!-- Label and input for listing_id -->
+      <input type="hidden" name="listing_id" value="<%= @listing.id %>">
+
+      <!-- Label and input for comments -->
+      <div class="form-group">
+        <label for="comments" class="control-label">
+          Comments
+        </label>
+
+        <input type="text" id="comments" name="comments" placeholder="Comments" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for rating -->
+      <div class="form-group">
+        <label for="rating" class="control-label">
+          Rating
+        </label>
+
+        <input type="text" id="rating" name="rating" placeholder="Rating" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for favorite -->
+      <div class="checkbox">
+        <label for="favorite">
+          <input type="checkbox" id="favorite" name="favorite" value="1" <%= "checked" if @history.favorite %>>
+          Favorite
+        </label>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create History
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
