@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the History resource:
+  # CREATE
+  get "/histories/new", :controller => "histories", :action => "new"
+  post "/create_history", :controller => "histories", :action => "create"
+
+  # READ
+  get "/histories", :controller => "histories", :action => "index"
+  get "/histories/:id", :controller => "histories", :action => "show"
+
+  # UPDATE
+  get "/histories/:id/edit", :controller => "histories", :action => "edit"
+  post "/update_history/:id", :controller => "histories", :action => "update"
+
+  # DELETE
+  get "/delete_history/:id", :controller => "histories", :action => "destroy"
+  #------------------------------
+
   # Routes for the Location resource:
   # CREATE
   get "/locations/new", :controller => "locations", :action => "new"
