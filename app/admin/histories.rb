@@ -1,4 +1,6 @@
 ActiveAdmin.register History do
+
+ permit_params :user_id, :listing_id, :comments, :rating, :favorite
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
