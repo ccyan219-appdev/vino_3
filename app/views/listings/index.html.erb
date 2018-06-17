@@ -17,8 +17,20 @@
 
       <% @listings.each do |listing| %>
       <tr>
-        <td><%= listing.wine.created_at %></td>
-        <td><%= listing.location.name %></td>
+        <td>
+          <% if listing.wine.present? %>
+            <a href="/wines/<%= listing.wine.id %>">
+              <%= listing.wine.created_at %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if listing.location.present? %>
+            <a href="/locations/<%= listing.location.id %>">
+              <%= listing.location.name %>
+            </a>
+          <% end %>
+        </td>
         <td><%= listing.price %></td>
         <td>
           <a href="/listings/<%= listing.id %>" class="btn btn-primary">Show</a>

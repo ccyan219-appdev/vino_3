@@ -19,8 +19,20 @@
 
       <% @histories.each do |history| %>
       <tr>
-        <td><%= history.user.email %></td>
-        <td><%= history.listing.wine_id %></td>
+        <td>
+          <% if history.user.present? %>
+            <a href="/users/<%= history.user.id %>">
+              <%= history.user.email %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if history.listing.present? %>
+            <a href="/listings/<%= history.listing.id %>">
+              <%= history.listing.wine_id %>
+            </a>
+          <% end %>
+        </td>
         <td><%= history.comments %></td>
         <td><%= history.rating %></td>
         <td><%= history.favorite %></td>

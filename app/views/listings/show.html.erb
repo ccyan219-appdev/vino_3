@@ -6,10 +6,22 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Wine</dt>
-      <dd><%= @listing.wine_id %></dd>
+      <dd>
+        <% if @listing.wine.present? %>
+          <a href="/wines/<%= @listing.wine_id %>">
+            <%= @listing.wine.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Location</dt>
-      <dd><%= @listing.location_id %></dd>
+      <dd>
+        <% if @listing.location.present? %>
+          <a href="/locations/<%= @listing.location_id %>">
+            <%= @listing.location.name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Price</dt>
       <dd><%= @listing.price %></dd>
