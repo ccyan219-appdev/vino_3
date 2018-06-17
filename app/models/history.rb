@@ -7,6 +7,10 @@ class History < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :location,
+             :through => :listing,
+             :source => :location
+
   has_one    :wine,
              :through => :listing,
              :source => :wine
