@@ -7,6 +7,10 @@ class History < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :wine,
+             :through => :listing,
+             :source => :wine
+
   # Validations
 
 end
