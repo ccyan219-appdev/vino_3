@@ -20,7 +20,7 @@
 
       <% @wines.each do |wine| %>
       <tr>
-        <td><%= wine.image %></td>
+        <td><img src='<%= wine.image %>' class='img-responsive'></td>
         <td><%= wine.name %></td>
         <td><%= wine.category %></td>
         <td><%= wine.variety %></td>
