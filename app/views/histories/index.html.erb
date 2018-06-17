@@ -26,8 +26,11 @@
         <td><%= history.favorite %></td>
         <td>
           <a href="/histories/<%= history.id %>" class="btn btn-primary">Show</a>
-          <a href="/histories/<%= history.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_history/<%= history.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == history.user %>
+            <a href="/histories/<%= history.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_history/<%= history.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>

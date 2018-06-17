@@ -26,12 +26,14 @@
       <a href="/histories" class="btn btn-primary">
         Back
       </a>
-      <a href="/histories/<%= @history.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_history/<%= @history.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
+      <% if current_user == @history.user %>
+        <a href="/histories/<%= @history.id %>/edit" class="btn btn-warning">
+          Edit
+        </a>
+        <a href="/delete_history/<%= @history.id %>" class="btn btn-danger" rel="nofollow">
+          Delete
+        </a>
+      <% end %>
     </div>
   </div>
 </div>
