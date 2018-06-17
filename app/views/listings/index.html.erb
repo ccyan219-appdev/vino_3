@@ -18,7 +18,7 @@
       <% @listings.each do |listing| %>
       <tr>
         <td><%= listing.wine.created_at %></td>
-        <td><%= listing.location_id %></td>
+        <td><%= listing.location.name %></td>
         <td><%= listing.price %></td>
         <td>
           <a href="/listings/<%= listing.id %>" class="btn btn-primary">Show</a>
