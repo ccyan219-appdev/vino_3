@@ -24,7 +24,7 @@
           Wine
         </label>
 
-        <input type="text" id="wine_id" name="wine_id" placeholder="Wine" class="form-control" value="<%= @listing.wine_id %>">
+        <%= select_tag(:wine_id, options_from_collection_for_select(Wine.all, :id, :created_at, @listing.wine_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for location_id -->
