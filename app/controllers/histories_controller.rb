@@ -10,7 +10,8 @@ class HistoriesController < ApplicationController
   end
 
   def index
-    @histories = History.page(params[:page]).per(10)
+    @q = History.ransack(params[:q])
+    @histories = @q.result(:distinct => true).includes(:listing, :user, :wine, :location).page(params[:page]).per(10)
 
     render("histories/index.html.erb")
   end
