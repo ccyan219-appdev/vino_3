@@ -1,4 +1,6 @@
 ActiveAdmin.register Location do
+
+ permit_params :name, :establishment_type, :address, :city, :time_open, :time_close
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
